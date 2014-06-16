@@ -66,7 +66,6 @@ class Word {
 		this.word = word;
 	}
 	
-	// This is good for strings
 	public int hashCode() {
 		String key = this.word;
 		int hashVal = 0;
