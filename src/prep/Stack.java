@@ -38,14 +38,6 @@ public class Stack {
 		return stackArray[topOfStack];
 	}
 	
-	/*public void pushMany(int multipleValues) {
-		int[] temp = multipleValues.split(" ");
-		
-		for (int i = 0; i < temp.length; i++) {
-			push(temp[i]);
-		}
-	}*/
-	
 	public void popAll() {
 		for (int i = topOfStack; i >= 0; i--) {
 			pop();
