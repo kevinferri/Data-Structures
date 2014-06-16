@@ -15,11 +15,6 @@ public class HashTable {
 			this.next = next;
 		}
 		
-		/*Entry(String key, String value) {
-			this.key = key;
-			this.value = value;
-			this.next = null;
-		}*/
 	}
     
 	
