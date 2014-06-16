@@ -4,8 +4,6 @@ import java.util.*;
 
 public class SortAndSearch {
 
-	// < descending  |  > ascending
-	
 	// BEST CASE: O(n)  |  WORST CASE: O(n^2)  |  AVERAGE CASE O(n^2)
 	public static void bubbleSort(int[] a) {
 		for (int i = a.length - 1; i > 1; i--) {
