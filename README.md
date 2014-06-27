@@ -1,4 +1,4 @@
-Data-Structures in Java
+Data structures in Java
 ===============
 
 Classs are in:
