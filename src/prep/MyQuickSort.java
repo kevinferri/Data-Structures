@@ -27,13 +27,13 @@ public class MyQuickSort {
 
         while (true) {
             i++;
-            while (i < r && a[i] < x)
+            while (i < r && a[i] < x) {
                 i++;
                 j--;
+            }
             while (j>p && a[j] > x) {
                 j--;
             }
-
             if (i < j) {
                 swap(a, i, j);
             }
