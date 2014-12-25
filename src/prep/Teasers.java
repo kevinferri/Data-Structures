@@ -87,7 +87,7 @@ public class Teasers {
 		return new String(newStr);
 	}
 	
-	// 1.5 compression strings aabcccccaaa => a2b1c5a3
+	// 1.5 compress strings aabcccccaaa => a2b1c5a3
 	public static String compressString (String s) {
 		int count = 0;
 		String compressedString = "";
