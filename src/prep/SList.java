@@ -143,28 +143,27 @@ public class SList {
   }
   
   public SListNode reverseList(SListNode list) {
-    if (list == null) return null;
-    if (list.next == null) return list;
+    if (list == null) {
+      return null;
+    }
     
-    // Grab the second element (which will be the last after we reverse it)
+    if (list.next == null) {
+      return list;
+    }
+
     SListNode secondElem = list.next;
     
-    // Bug fix - need to unlink list from the rest or you will get a cycle
     list.next = null;
-    
-    // Then we reverse everything from the second element on
+
     SListNode reverseRest = reverseList(secondElem);
     
-    // Then we join the two lists
     secondElem.next = list;
     
     return reverseRest;
   }
   
   
-  public static void main (String[] args) {
-    
-  }
+  public static void main (String[] args) {}
   
 }
 
