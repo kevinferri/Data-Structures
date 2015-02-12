@@ -1,18 +1,5 @@
 package prep;
 
-/*
- * Entry remove(Object k);
- *   Find a node n with key k
- *   Return null if k not in tree
- *   If n has no children, detach it from parent
- *   If n has one child, move n's child up to take n's place
- *   If n has 2 children,
- *     Let x be node in n's right subtree with smallest key
- *     Remove x - x has no left child and therefore is easily removed
- *     Replace n's key with x's key
- * 
- */
-
 public class BinaryTree {
   BinaryTreeNode root;
   int size;
