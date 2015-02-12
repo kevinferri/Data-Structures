@@ -40,8 +40,8 @@ public class SortAndSearch {
       int k = i;
       int toInsert = a[i];
       
-      while ((k > 0) && a[k-1] > toInsert) {
-        a[k] = a[k-1];
+      while ((k > 0) && a[k - 1] > toInsert) {
+        a[k] = a[k - 1];
         k--;
       }
       
@@ -70,7 +70,6 @@ public class SortAndSearch {
       }
 
       else {
-        System.out.println("\nFound a Match for " + value + " at Index " + middleIndex);
         lowIndex = highIndex + 1;
       }
     }
