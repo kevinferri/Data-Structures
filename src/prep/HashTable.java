@@ -101,7 +101,6 @@ public class HashTable {
     }
     
     // If we get to this point, the either curr is null or curr.key is equal to key.
-    
     if (curr != null) {
       prev.next = curr.next;
       entries--;

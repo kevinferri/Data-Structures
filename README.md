@@ -1,8 +1,1 @@
-Data structures in Java
-===============
-
-Classs are in:
-
-```
-src/prep
-```
+# Data structures in Java

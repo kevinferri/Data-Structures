@@ -204,9 +204,14 @@ public class Teasers {
 		int rightCount = 0;
 		
 		for (int i = 0; i < nums.length; i++) {
-			System.out.println(left + right);
-			if (left == right) return false;
-			if (left + right == sum) return true;
+			if (left == right) {
+				return false;
+			}
+
+			if (left + right == sum) {
+				return true;
+			}
+
 			if (left + right > sum) {
 				rightCount++;
 				right = nums[nums.length - 1 - rightCount];
@@ -214,8 +219,9 @@ public class Teasers {
 				leftCount++;
 				left = nums[leftCount] ;
 			}
+
 		}
-		
+
 		return false;
 	}
 	
