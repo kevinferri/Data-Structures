@@ -14,96 +14,96 @@ package prep;
  */
 
 public class BinaryTree {
-	BinaryTreeNode root;
-	int size;
-	
-	public Object find(Object k) {
-		BinaryTreeNode node = root;
-		
-		while (node != null) {
-			int comp = ((Comparable) k).compareTo(node.entry.key); // If we know the keys are int we can just compare keys each time (this.key > k.key .. etc)
-			if (comp < 0) { // The key that we are searching for is less than the one visited so we must go left
-				node = node.left;
-			} else if (comp > 0) { // The key that we are searching for is greater than the one visited so we must go right
-				node = node.right;
-			} else {
-				return node.entry; // Comparable is a match
-			}
-		}
-		
-		return null; // Didn't find anything
-	}
-	
-	public BSTEntry first() {
-		BinaryTreeNode node = root;
-		
-		while (node.left != null) {
-			node = node.left;
-		}
-		return node.entry;
-	}
-	
-	public BSTEntry last() {
-		BinaryTreeNode node = root;
-		
-		while (node.right != null) {
-			node = node.right;
-		}
-		return node.entry;
-	}
-	
-	// Not sure if this is 100% right
-	public void insert(Object k, Object v) {
-		BinaryTreeNode node = root;
-		
-		while (node != null) {
-			int comp = ((Comparable) k).compareTo(node.entry.key); // If we know the keys are int we can just compare keys each time (this.key > k.key .. etc)
-			if (comp < 0) { // The key that we are searching for is less than the one visited so we must go left
-				node = node.left;
-			} else if (comp > 0) { // The key that we are searching for is greater than the one visited so we must go right
-				node = node.right;
-			}
-		}
-		node.entry = new BSTEntry(k, v);
-	}
-	
-	
+  BinaryTreeNode root;
+  int size;
+  
+  public Object find(Object k) {
+    BinaryTreeNode node = root;
+    
+    while (node != null) {
+      int comp = ((Comparable) k).compareTo(node.entry.key); // If we know the keys are int we can just compare keys each time (this.key > k.key .. etc)
+      if (comp < 0) { // The key that we are searching for is less than the one visited so we must go left
+        node = node.left;
+      } else if (comp > 0) { // The key that we are searching for is greater than the one visited so we must go right
+        node = node.right;
+      } else {
+        return node.entry; // Comparable is a match
+      }
+    }
+    
+    return null; // Didn't find anything
+  }
+  
+  public BSTEntry first() {
+    BinaryTreeNode node = root;
+    
+    while (node.left != null) {
+      node = node.left;
+    }
+    return node.entry;
+  }
+  
+  public BSTEntry last() {
+    BinaryTreeNode node = root;
+    
+    while (node.right != null) {
+      node = node.right;
+    }
+    return node.entry;
+  }
+  
+  // Not sure if this is 100% right
+  public void insert(Object k, Object v) {
+    BinaryTreeNode node = root;
+    
+    while (node != null) {
+      int comp = ((Comparable) k).compareTo(node.entry.key); // If we know the keys are int we can just compare keys each time (this.key > k.key .. etc)
+      if (comp < 0) { // The key that we are searching for is less than the one visited so we must go left
+        node = node.left;
+      } else if (comp > 0) { // The key that we are searching for is greater than the one visited so we must go right
+        node = node.right;
+      }
+    }
+    node.entry = new BSTEntry(k, v);
+  }
+  
+  
 }
 
 class BinaryTreeNode  {
-	BSTEntry entry;
-	BinaryTreeNode parent;
-	BinaryTreeNode left;
-	BinaryTreeNode right;
-	
-	BinaryTreeNode(BSTEntry entry) {
-		this.entry = entry;
-	}
-	
-	public void inorder() {
-		if (left !=null) {
-			left.inorder();
-		}
-		this.visit();
-		if (right != null) {
-			right.inorder();
-		}
-	}
-	
-	public BinaryTreeNode visit() {
-		System.out.println("Visiting a node: " + this);
-		return this;
-	}
+  BSTEntry entry;
+  BinaryTreeNode parent;
+  BinaryTreeNode left;
+  BinaryTreeNode right;
+  
+  BinaryTreeNode(BSTEntry entry) {
+    this.entry = entry;
+  }
+  
+  public void inorder() {
+    if (left !=null) {
+      left.inorder();
+    }
+    this.visit();
+    if (right != null) {
+      right.inorder();
+    }
+  }
+  
+  public BinaryTreeNode visit() {
+    System.out.println("Visiting a node: " + this);
+    return this;
+  }
 }
 
 class BSTEntry {
-	Object key;
-	Object value;
-	
-	BSTEntry(Object key, Object value) {
-		this.key = key;
-		this.value = value;
-	}
+  Object key;
+  Object value;
+  
+  BSTEntry(Object key, Object value) {
+    this.key = key;
+    this.value = value;
+  }
 }
 
 
@@ -126,34 +126,34 @@ boolean isItALeftChild = true;
 
 while (focusNode.key != key) {
 
-	parent = focusNode;
+  parent = focusNode;
 
-	// If we should search to the left
+  // If we should search to the left
 
-	if (key < focusNode.key) {
+  if (key < focusNode.key) {
 
-		isItALeftChild = true;
+    isItALeftChild = true;
 
-		// Shift the focus Node to the left child
+    // Shift the focus Node to the left child
 
-		focusNode = focusNode.leftChild;
+    focusNode = focusNode.leftChild;
 
-	} else {
+  } else {
 
-		// Greater than focus node so go to the right
+    // Greater than focus node so go to the right
 
-		isItALeftChild = false;
+    isItALeftChild = false;
 
-		// Shift the focus Node to the right child
+    // Shift the focus Node to the right child
 
-		focusNode = focusNode.rightChild;
+    focusNode = focusNode.rightChild;
 
-	}
+  }
 
-	// The node wasn't found
+  // The node wasn't found
 
-	if (focusNode == null)
-		return false;
+  if (focusNode == null)
+    return false;
 
 }
 
@@ -161,21 +161,21 @@ while (focusNode.key != key) {
 
 if (focusNode.leftChild == null && focusNode.rightChild == null) {
 
-	// If root delete it
+  // If root delete it
 
-	if (focusNode == root)
-		root = null;
+  if (focusNode == root)
+    root = null;
 
-	// If it was marked as a left child
-	// of the parent delete it in its parent
+  // If it was marked as a left child
+  // of the parent delete it in its parent
 
-	else if (isItALeftChild)
-		parent.leftChild = null;
+  else if (isItALeftChild)
+    parent.leftChild = null;
 
-	// Vice versa for the right child
+  // Vice versa for the right child
 
-	else
-		parent.rightChild = null;
+  else
+    parent.rightChild = null;
 
 }
 
@@ -183,20 +183,20 @@ if (focusNode.leftChild == null && focusNode.rightChild == null) {
 
 else if (focusNode.rightChild == null) {
 
-	if (focusNode == root)
-		root = focusNode.leftChild;
+  if (focusNode == root)
+    root = focusNode.leftChild;
 
-	// If focus Node was on the left of parent
-	// move the focus Nodes left child up to the
-	// parent node
+  // If focus Node was on the left of parent
+  // move the focus Nodes left child up to the
+  // parent node
 
-	else if (isItALeftChild)
-		parent.leftChild = focusNode.leftChild;
+  else if (isItALeftChild)
+    parent.leftChild = focusNode.leftChild;
 
-	// Vice versa for the right child
+  // Vice versa for the right child
 
-	else
-		parent.rightChild = focusNode.leftChild;
+  else
+    parent.rightChild = focusNode.leftChild;
 
 }
 
@@ -204,20 +204,20 @@ else if (focusNode.rightChild == null) {
 
 else if (focusNode.leftChild == null) {
 
-	if (focusNode == root)
-		root = focusNode.rightChild;
+  if (focusNode == root)
+    root = focusNode.rightChild;
 
-	// If focus Node was on the left of parent
-	// move the focus Nodes right child up to the
-	// parent node
+  // If focus Node was on the left of parent
+  // move the focus Nodes right child up to the
+  // parent node
 
-	else if (isItALeftChild)
-		parent.leftChild = focusNode.rightChild;
+  else if (isItALeftChild)
+    parent.leftChild = focusNode.rightChild;
 
-	// Vice versa for the left child
+  // Vice versa for the left child
 
-	else
-		parent.rightChild = focusNode.rightChild;
+  else
+    parent.rightChild = focusNode.rightChild;
 
 }
 
@@ -226,26 +226,26 @@ else if (focusNode.leftChild == null) {
 
 else {
 
-	Node replacement = getReplacementNode(focusNode);
+  Node replacement = getReplacementNode(focusNode);
 
-	// If the focusNode is root replace root
-	// with the replacement
+  // If the focusNode is root replace root
+  // with the replacement
 
-	if (focusNode == root)
-		root = replacement;
+  if (focusNode == root)
+    root = replacement;
 
-	// If the deleted node was a left child
-	// make the replacement the left child
+  // If the deleted node was a left child
+  // make the replacement the left child
 
-	else if (isItALeftChild)
-		parent.leftChild = replacement;
+  else if (isItALeftChild)
+    parent.leftChild = replacement;
 
-	// Vice versa if it was a right child
+  // Vice versa if it was a right child
 
-	else
-		parent.rightChild = replacement;
+  else
+    parent.rightChild = replacement;
 
-	replacement.leftChild = focusNode.leftChild;
+  replacement.leftChild = focusNode.leftChild;
 
 }
 
