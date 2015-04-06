@@ -30,7 +30,7 @@ public class MyQuickSort {
         i++;
         j--;
       }
-      while (j>p && a[j] > x) {
+      while (j > p && a[j] > x) {
         j--;
       }
       if (i < j) {
