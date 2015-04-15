@@ -109,7 +109,7 @@ public class Teasers {
         }
       }
     }
-      return compressedString;
+    return compressedString;
   }
   
   // 1.6 rotate a matrix right
@@ -177,7 +177,6 @@ public class Teasers {
         currentStreak++;
       } else {
         removed[i - currentStreak] = a[i];
-
       }
     }
     return removed;
@@ -237,7 +236,8 @@ public class Teasers {
       }
       
       num[i+1] = key;
-       }
+      
+    }
   }
   
   public static int findBiggestRow(int[][] matrix) {
